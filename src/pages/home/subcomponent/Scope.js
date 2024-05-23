@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import image2 from "../../../assets/images/venti-views-FPKnAO-CF6M-unsplash.jpg";
+import image2 from "../../../assets/images/venti-views-FPKnAO-CF6M-unsplash.webp";
 
 const Scope = () => {
   return (
@@ -11,11 +11,13 @@ const Scope = () => {
         style={{backgroundColor:"rgba(12, 12, 13, 0.3)"}}
       >
         <Image
-          width="3346"
-          height="1878"
+          // width="3346"
+          // height="1878"
           alt="not found"
+          priority
           src={image2}
           style={{ mixBlendMode: "multiply" }}
+          quality={50}
         />
         <div className="front-full-inner">
           <div className="font-full-inner-content front-story">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import image3 from "../../../assets/images/lucas-van-oort-fBZOVyF-96w-unsplash.jpg";
+import image3 from "../../../assets/images/lucas-van-oort-fBZOVyF-96w-unsplash_1.webp";
 
 const ImportAirFreight = () => {
   return (
@@ -11,11 +11,13 @@ const ImportAirFreight = () => {
         style={{backgroundColor:"rgba(12, 12, 13, 0.3)"}}
       >
         <Image
-          width="3346"
-          height="1878"
+          // width="3346"
+          // height="1878"
           alt="not found"
+          priority
           src={image3}
           style={{ mixBlendMode: "multiply" }}
+          quality={50}
         />
         <div className="front-full-inner" id="service1" style={{scrollMarginTop:"12rem"}}>
           <div className="font-full-inner-content front-story">

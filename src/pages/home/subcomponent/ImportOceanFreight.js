@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import image4 from "../../../assets/images/nigel-tadyanehondo-GOD2mDNujuU-unsplash.jpg";
+import image4 from "../../../assets/images/nigel-tadyanehondo-GOD2mDNujuU-unsplash-_1__1.webp";
 
 const ImportOceanFreight = () => {
   return (
@@ -11,11 +11,13 @@ const ImportOceanFreight = () => {
         style={{backgroundColor:"rgba(12, 12, 13, 0.3)"}}
       >
         <Image
-          width="3346"
-          height="1878"
+          // width="3346"
+          // height="1878"
           alt="not found"
+          priority
           src={image4}
           style={{ mixBlendMode: "multiply" }}
+          quality={50}
         />
         <div className="front-full-inner" id="service2" style={{scrollMarginTop:"12rem"}}>
           <div className="font-full-inner-content front-story">

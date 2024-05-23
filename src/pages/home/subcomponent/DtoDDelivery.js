@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import image4 from "../../../assets/images/nigel-tadyanehondo-GOD2mDNujuU-unsplash.jpg";
+import image4 from "../../../assets/images/nigel-tadyanehondo-GOD2mDNujuU-unsplash-_1__1.webp";
 
 const DtoDDelivery = () => {
   return (
@@ -10,11 +10,13 @@ const DtoDDelivery = () => {
         style={{ backgroundColor: "#1a2d2f" }}
       >
         <Image
-          width="3346"
-          height="1878"
+          // width="3346"
+          // height="1878"
           alt="not found"
           src={image4}
+          priority
           style={{ mixBlendMode: "multiply" }}
+          quality={50}
         />
         <div className="front-full-inner" id="service5" style={{scrollMarginTop:"12rem"}}>
           <div className="font-full-inner-content front-story">

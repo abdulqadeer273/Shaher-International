@@ -1,0 +1,26 @@
+/* styles/ScrollingText.module.css */
+.container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.section {
+    height: 100vh;
+    position: relative;
+    /* Required for absolute positioning */
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 0.5s, transform 0.5s;
+    position: absolute;
+    bottom: 0;
+    /* Position at the bottom of the section */
+}

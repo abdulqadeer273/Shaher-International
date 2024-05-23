@@ -1,0 +1,36 @@
+.carousel {
+    display: flex;
+    animation: carousel 1s infinite linear;
+    width: 90vw;
+}
+
+.carousel div {
+    flex: 1;
+    border: 1px solid black;
+    margin-right: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 30%;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(-400%);
+    }
+}

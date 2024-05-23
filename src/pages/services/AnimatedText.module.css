@@ -1,0 +1,15 @@
+/* AnimatedText.module.css */
+
+.textContainer {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    margin-right: 4px;
+    font-size: 24px;
+    color: #fff;
+}

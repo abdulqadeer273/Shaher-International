@@ -1,0 +1,39 @@
+{
+  "version": "3",
+  "remote": {
+    "https://edge.netlify.com/": "ff84a16f192fdb43db8b9dff869889f555c05857d075044d2a7cfa54c283a0a0",
+    "https://edge.netlify.com/bootstrap/config.ts": "0aa0a225d978b89e0e62cbd853701605199e7a84095e55eeb70147faf1a24803",
+    "https://edge.netlify.com/bootstrap/context.ts": "8f99269eeeeccf9b852e6089cc648c962a0ea20b2198b8b38b38e3b2ce2b9143",
+    "https://edge.netlify.com/bootstrap/cookie.ts": "8b0baae708989ca183c6f3b4ab3d029e6abcbc2e43f93edeb0ff447b3bbc3a05",
+    "https://edge.netlify.com/bootstrap/edge_function.ts": "b8253e86aa83c67341f5cfedeba5049d77fbf84dcab7eceff7566b7728ae9b39",
+    "https://edge.netlify.com/bootstrap/globals.ts": "38f9e0be6c2c78206bf14d2387d41964d38bbe81644b3668e203c6f6473408a7"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@motionone/utils@^10.17.0",
+        "npm:@types/aos@^3.0.7",
+        "npm:@types/node@^20",
+        "npm:@types/react-dom@^18",
+        "npm:@types/react-slick@^0.23.13",
+        "npm:@types/react@^18",
+        "npm:aos@^2.3.4",
+        "npm:bootstrap@^5.3.2",
+        "npm:dotenv@^16.4.5",
+        "npm:file-loader@^6.2.0",
+        "npm:flowbite-react@^0.7.2",
+        "npm:framer-motion@^11.1.7",
+        "npm:next@14.1.0",
+        "npm:react-bootstrap@^2.10.0",
+        "npm:react-dom@^18",
+        "npm:react-responsive-carousel@^3.2.23",
+        "npm:react-slick@^0.30.2",
+        "npm:react-use-measure@^2.1.1",
+        "npm:react@^18",
+        "npm:slick-carousel@^1.8.1",
+        "npm:swiper@^11.0.6",
+        "npm:typescript@^5"
+      ]
+    }
+  }
+}

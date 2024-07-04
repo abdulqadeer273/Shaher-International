@@ -351,3 +351,35 @@ a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-
   ::-webkit-scrollbar {
     display: none;
 }
+.dropdown-toggle {
+    white-space: nowrap;
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    border-left: 0!important;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #000000!important;
+    background-color: #C6C7C8!important;
+}
+.dropdown-menu.show {
+    display: block;
+    max-height: 200px!important;
+    overflow-y: auto!important;
+    -ms-overflow-style: auto!important;  /* IE 10+ */
+  scrollbar-width: auto!important; 
+}
+.dropdown-menu::-webkit-scrollbar {
+    width: 12px!important; /* Adjust scrollbar width as needed */
+  }
+  
+  .dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1!important; /* Color of the scrollbar track */
+  }
+  
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888!important; /* Color of the scrollbar thumb */
+  }
+  
+  .dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #555!important; /* Color of the scrollbar thumb on hover */
+  }

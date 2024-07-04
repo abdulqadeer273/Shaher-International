@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import image1 from "../../../assets/images/ishant-mishra-napAS8Izafs-unsplash.jpg";
+import image1 from "../../../assets/images/ishant-mishra-napAS8Izafs-unsplash.webp";
 import { Form, Row, Col, InputGroup, Button } from "react-bootstrap";
-
-const DutyCalculationsForm = ({targetRef}) => {
+import CurrencyAmountInput from "./CurrencyAmountInput";
+import PhoneInputWithCountryCode from "./PhoneInputWithCountryCode";
+const DutyCalculationsForm = ({ targetRef }) => {
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -13,6 +14,45 @@ const DutyCalculationsForm = ({targetRef}) => {
     }
 
     setValidated(true);
+  };
+  function handleHsCodeInput(event) {
+    const input = event.target;
+    const value = input.value.replace(/\D/g, ""); // Remove non-digit characters
+    const formattedValue =
+      value.slice(0, 4) + (value.length > 4 ? "." + value.slice(4, 8) : "");
+    input.value = formattedValue;
+  }
+  const handleWeightInput = (event) => {
+    const value = event.target.value;
+    const filteredValue = value.replace(/[^0-9.]/g, "");
+
+    // Set the filtered value back to the input
+    event.target.value = filteredValue;
+
+    // Check if the filtered value is valid
+    const isValid = /^\d*\.?\d*$/.test(filteredValue);
+
+    if (!isValid) {
+      event.target.setCustomValidity("Please enter a valid number");
+    } else {
+      event.target.setCustomValidity("");
+    }
+  };
+  const handleQuantityInput = (event) => {
+    const value = event.target.value;
+    const filteredValue = value.replace(/[^0-9]/g, "");
+
+    // Set the filtered value back to the input
+    event.target.value = filteredValue;
+
+    // Check if the filtered value is a valid positive integer
+    const isValid = /^[1-9]\d*$/.test(filteredValue);
+
+    if (!isValid && filteredValue !== "") {
+      event.target.setCustomValidity("Please enter a valid positive integer");
+    } else {
+      event.target.setCustomValidity("");
+    }
   };
   return (
     <div className="section6">
@@ -59,9 +99,10 @@ const DutyCalculationsForm = ({targetRef}) => {
                           HS Code
                         </Form.Label>
                         <Form.Control
-                          required
                           type="text"
-                          placeholder="#########"
+                          placeholder="####.####"
+                          pattern="^\d{4}\.\d{4}$"
+                          onInput={handleHsCodeInput}
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid HS Code.
@@ -73,12 +114,13 @@ const DutyCalculationsForm = ({targetRef}) => {
                         controlId="validationCustom01"
                       >
                         <Form.Label className="opposite-color">
-                          Net Weight
+                          Net Weight (KG)
                         </Form.Label>
                         <Form.Control
-                          required
                           type="text"
                           placeholder="Net Weight"
+                          pattern="^\d*\.?\d*$"
+                          onInput={handleWeightInput}
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Net Weight.
@@ -93,9 +135,10 @@ const DutyCalculationsForm = ({targetRef}) => {
                           Pcs / Quantity
                         </Form.Label>
                         <Form.Control
-                          required
                           type="text"
                           placeholder="Quantity"
+                          pattern="^[1-9]\d*$"
+                          onInput={handleQuantityInput}
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Pcs.
@@ -111,14 +154,13 @@ const DutyCalculationsForm = ({targetRef}) => {
                         <Form.Label className="opposite-color">
                           Value
                         </Form.Label>
-                        <Form.Control
+                        {/* <Form.Control
                           required
                           type="text"
                           placeholder="Value"
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          Please provide a valid Value.
-                        </Form.Control.Feedback>
+                        /> */}
+
+                        <CurrencyAmountInput />
                       </Form.Group>
                       <Form.Group
                         as={Col}
@@ -151,11 +193,7 @@ const DutyCalculationsForm = ({targetRef}) => {
                         <Form.Label className="opposite-color">
                           Phone
                         </Form.Label>
-                        <Form.Control
-                          type="text"
-                          placeholder="Phone"
-                          required
-                        />
+                        <PhoneInputWithCountryCode />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Phone.
                         </Form.Control.Feedback>
@@ -168,7 +206,11 @@ const DutyCalculationsForm = ({targetRef}) => {
                         controlId="validationCustom04"
                       >
                         <Form.Label className="opposite-color">Name</Form.Label>
-                        <Form.Control type="text" placeholder="Name" required />
+                        <Form.Control
+                          type="text"
+                          placeholder="Name"
+                          minLength={3}
+                        />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Name.
                         </Form.Control.Feedback>
@@ -184,7 +226,7 @@ const DutyCalculationsForm = ({targetRef}) => {
                         <Form.Control
                           type="text"
                           placeholder="Company Name"
-                          required
+                          minLength={3}
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Company Name.
@@ -200,7 +242,7 @@ const DutyCalculationsForm = ({targetRef}) => {
                           Description
                         </Form.Label>
                         <Form.Control
-                          required
+                          minLength={3}
                           as="textarea"
                           rows={3}
                           placeholder="Description"

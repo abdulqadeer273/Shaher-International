@@ -48,19 +48,21 @@ const phoneNumberOptions = [
   { value: "MAD", label: "+212" }, // Moroccan Dirham
 ];
 
-const PhoneInputWithCountryCode = ({isInvalid}) => {
+const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData }) => {
   const [selectedCurrency, setSelectedCurrency] = useState(
     phoneNumberOptions[0]
   );
-  const [amount, setAmount] = useState("");
 
   const handleCurrencyChange = (currency) => {
     setSelectedCurrency(currency);
   };
 
   const handleAmountChange = (event) => {
-    const value = event.target.value.replace(/[^0-9.]/g, ""); // Allow only numbers and decimal point
-    setAmount(value);
+    const desiredValue = event.target.value.replace(/[^0-9.]/g, ""); // Allow only numbers and decimal point
+    setFormData((prevData) => ({
+      ...prevData,
+      phone: desiredValue,
+    }));
   };
 
   return (
@@ -77,7 +79,7 @@ const PhoneInputWithCountryCode = ({isInvalid}) => {
         </InputGroup.Text>
         <Form.Control
           type="text"
-          value={amount}
+          value={value}
           onChange={handleAmountChange}
           placeholder="Enter number"
           style={{ borderRadius: 0, border: 0 }}

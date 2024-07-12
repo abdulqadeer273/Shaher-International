@@ -25,16 +25,32 @@ const DutyCalculationsForm = ({ targetRef }) => {
     }));
   };
   const [validated, setValidated] = useState(false);
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
-    }
+    } else {
+      try {
+        const response = await fetch("/.netlify/functions/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
 
+        const result = await response.json();
+        if (result.success) {
+          console.log("Message sent successfully:", result);
+        } else {
+          console.log("Failed to send message:", result);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
     setValidated(true);
-    console.log(formData)
   };
   function handleHsCodeInput(event) {
     const input = event.target;

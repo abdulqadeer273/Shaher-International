@@ -22,17 +22,17 @@ exports.handler = async (event, context) => {
   } = JSON.parse(event.body);
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.shaherintl.com",
-    port: "465",
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     secure: true,
     auth: {
-      user: "osama@shaherintl.com",
-      pass: "Osama@shaher1234",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
   const mailOptions = {
-    from: "osama@shaherintl.com",
+    from: process.env.SMTP_USER,
     to: email,
     subject: `New Contact Form Submission from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nDescription: ${description}\nHsCode: ${hsCode}\nQuantity: ${quantity}\nValue: ${value}\nPhone: ${phone}\nCompanyName: ${companyName}\nNetWeight: ${netWeight}`,

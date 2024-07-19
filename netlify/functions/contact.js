@@ -33,12 +33,12 @@ exports.handler = async (event, context) => {
 
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: email,
+    to: process.env.RECEIVER_EMAIL,
     subject: `New Contact Form Submission from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nDescription: ${description}\nHsCode: ${hsCode}\nQuantity: ${quantity}\nValue: ${value}\nPhone: ${phone}\nCompanyName: ${companyName}\nNetWeight: ${netWeight}`,
   };
-  console.log(mailOptions,'mailOptions');
-  console.log(transporter,'transporter');
+  console.log(mailOptions, "mailOptions");
+  console.log(transporter, "transporter");
   try {
     await transporter.sendMail(mailOptions);
     return {

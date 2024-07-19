@@ -2,51 +2,53 @@ import React, { useState } from "react";
 import { Form, InputGroup, DropdownButton, Dropdown } from "react-bootstrap";
 
 const phoneNumberOptions = [
-  { value: "USD", label: "+1" }, // United States Dollar
-  { value: "GBP", label: "+44" }, // British Pound
-  { value: "JPY", label: "+81" }, // Japanese Yen
-  { value: "AUD", label: "+61" }, // Australian Dollar
-  { value: "CAD", label: "+1" }, // Canadian Dollar
-  { value: "CHF", label: "+41" }, // Swiss Franc
-  { value: "CNY", label: "+86" }, // Chinese Yuan
-  { value: "SEK", label: "+46" }, // Swedish Krona
-  { value: "NZD", label: "+64" }, // New Zealand Dollar
-  { value: "MXN", label: "+52" }, // Mexican Peso
-  { value: "SGD", label: "+65" }, // Singapore Dollar
-  { value: "HKD", label: "+852" }, // Hong Kong Dollar
-  { value: "NOK", label: "+47" }, // Norwegian Krone
-  { value: "KRW", label: "+82" }, // South Korean Won
-  { value: "TRY", label: "+90" }, // Turkish Lira
-  { value: "RUB", label: "+7" }, // Russian Ruble
-  { value: "INR", label: "+91" }, // Indian Rupee
-  { value: "BRL", label: "+55" }, // Brazilian Real
-  { value: "ZAR", label: "+27" }, // South African Rand
-  { value: "PLN", label: "+48" }, // Polish Zloty
-  { value: "PHP", label: "+63" }, // Philippine Peso
-  { value: "CZK", label: "+420" }, // Czech Koruna
-  { value: "IDR", label: "+62" }, // Indonesian Rupiah
-  { value: "HUF", label: "+36" }, // Hungarian Forint
-  { value: "ILS", label: "+972" }, // Israeli New Shekel
-  { value: "MYR", label: "+60" }, // Malaysian Ringgit
-  { value: "THB", label: "+66" }, // Thai Baht
-  { value: "VND", label: "+84" }, // Vietnamese Dong
-  { value: "NGN", label: "+234" }, // Nigerian Naira
-  { value: "PKR", label: "+92" }, // Pakistani Rupee
-  { value: "EGP", label: "+20" }, // Egyptian Pound
-  { value: "BDT", label: "+880" }, // Bangladeshi Taka
-  { value: "UAH", label: "+380" }, // Ukrainian Hryvnia
-  { value: "CLP", label: "+56" }, // Chilean Peso
-  { value: "SAR", label: "+966" }, // Saudi Riyal
-  { value: "AED", label: "+971" }, // United Arab Emirates Dirham
-  { value: "COP", label: "+57" }, // Colombian Peso
-  { value: "ARS", label: "+54" }, // Argentine Peso
-  { value: "KWD", label: "+965" }, // Kuwaiti Dinar
-  { value: "QAR", label: "+974" }, // Qatari Riyal
-  { value: "OMR", label: "+968" }, // Omani Rial
-  { value: "LKR", label: "+94" }, // Sri Lankan Rupee
-  { value: "DZD", label: "+213" }, // Algerian Dinar
-  { value: "MAD", label: "+212" }, // Moroccan Dirham
+  { value: "AE", label: "+971" }, // United Arab Emirates
+  { value: "AR", label: "+54" }, // Argentina
+  { value: "AU", label: "+61" }, // Australia
+  { value: "BD", label: "+880" }, // Bangladesh
+  { value: "BR", label: "+55" }, // Brazil
+  { value: "CA", label: "+1" }, // Canada
+  { value: "CH", label: "+41" }, // Switzerland
+  { value: "CL", label: "+56" }, // Chile
+  { value: "CN", label: "+86" }, // China
+  { value: "CO", label: "+57" }, // Colombia
+  { value: "CZ", label: "+420" }, // Czech Republic
+  { value: "DE", label: "+49" }, // Germany
+  { value: "DZ", label: "+213" }, // Algeria
+  { value: "EG", label: "+20" }, // Egypt
+  { value: "GB", label: "+44" }, // United Kingdom
+  { value: "HK", label: "+852" }, // Hong Kong
+  { value: "HU", label: "+36" }, // Hungary
+  { value: "ID", label: "+62" }, // Indonesia
+  { value: "IL", label: "+972" }, // Israel
+  { value: "IN", label: "+91" }, // India
+  { value: "JP", label: "+81" }, // Japan
+  { value: "KR", label: "+82" }, // South Korea
+  { value: "KW", label: "+965" }, // Kuwait
+  { value: "LK", label: "+94" }, // Sri Lanka
+  { value: "MA", label: "+212" }, // Morocco
+  { value: "MX", label: "+52" }, // Mexico
+  { value: "MY", label: "+60" }, // Malaysia
+  { value: "NG", label: "+234" }, // Nigeria
+  { value: "NO", label: "+47" }, // Norway
+  { value: "NZ", label: "+64" }, // New Zealand
+  { value: "OM", label: "+968" }, // Oman
+  { value: "PH", label: "+63" }, // Philippines
+  { value: "PK", label: "+92" }, // Pakistan
+  { value: "PL", label: "+48" }, // Poland
+  { value: "QA", label: "+974" }, // Qatar
+  { value: "RU", label: "+7" }, // Russia
+  { value: "SA", label: "+966" }, // Saudi Arabia
+  { value: "SE", label: "+46" }, // Sweden
+  { value: "SG", label: "+65" }, // Singapore
+  { value: "TH", label: "+66" }, // Thailand
+  { value: "TR", label: "+90" }, // Turkey
+  { value: "UA", label: "+380" }, // Ukraine
+  { value: "US", label: "+1" }, // United States
+  { value: "VN", label: "+84" }, // Vietnam
+  { value: "ZA", label: "+27" }, // South Africa
 ];
+
 
 const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData }) => {
   const [selectedCurrency, setSelectedCurrency] = useState(

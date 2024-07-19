@@ -17,6 +17,14 @@ const DutyCalculationsForm = ({ targetRef }) => {
     companyName: "",
     description: "",
   });
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/TARIFF.pdf'; // Path to your PDF file in the public folder
+    link.download = 'TARIFF.pdf'; // Filename for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -321,9 +329,12 @@ const DutyCalculationsForm = ({ targetRef }) => {
                       </Form.Group>
                     </Row>
                     <div className="text-center my-5">
-                      <Button className="btn btn-light" type="submit">
-                        Request a Quote
-                      </Button>
+                        <Button className="btn btn-light mx-2" type="submit">
+                          Request a Quote
+                        </Button>
+                        <Button className="btn btn-light mx-2" type="button" onClick={handleDownload}>
+                          Download Tariff
+                        </Button>
                     </div>
                   </Form>
                 </div>

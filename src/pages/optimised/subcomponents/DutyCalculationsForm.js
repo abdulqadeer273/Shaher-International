@@ -4,8 +4,14 @@ import image1 from "../../../assets/images/ishant-mishra-napAS8Izafs-unsplash.we
 import { Form, Row, Col, InputGroup, Button } from "react-bootstrap";
 import CurrencyAmountInput from "./CurrencyAmountInput";
 import PhoneInputWithCountryCode from "./PhoneInputWithCountryCode";
+import { Oval } from "react-loader-spinner";
 const DutyCalculationsForm = ({ targetRef }) => {
   const [isInvalid, setIsInvalid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedCode, setSelectedCode] = useState({
+    value: "PK",
+    label: "+92",
+  });
   const [formData, setFormData] = useState({
     hsCode: "",
     netWeight: "",
@@ -18,9 +24,9 @@ const DutyCalculationsForm = ({ targetRef }) => {
     description: "",
   });
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/TARIFF.pdf'; // Path to your PDF file in the public folder
-    link.download = 'TARIFF.pdf'; // Filename for the downloaded file
+    const link = document.createElement("a");
+    link.href = "/TARIFF.pdf"; // Path to your PDF file in the public folder
+    link.download = "TARIFF.pdf"; // Filename for the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -40,6 +46,8 @@ const DutyCalculationsForm = ({ targetRef }) => {
       event.stopPropagation();
     } else {
       try {
+        setIsLoading(true);
+        formData.phone = selectedCode.label + formData.phone;
         const response = await fetch("/.netlify/functions/contact", {
           method: "POST",
           headers: {
@@ -51,8 +59,26 @@ const DutyCalculationsForm = ({ targetRef }) => {
         const result = await response.json();
         if (result.success) {
           console.log("Message sent successfully:", result);
+          alert(
+            "Thank you for your submission! Your quote request has been successfully sent. We will get back to you shortly."
+          );
+          setIsInvalid(false);
+          setFormData({
+            hsCode: "",
+            netWeight: "",
+            quantity: "",
+            value: "",
+            email: "",
+            phone: "",
+            name: "",
+            companyName: "",
+            description: "",
+          });
+          setIsLoading(false);
+          return;
         } else {
-          console.log("Failed to send message:", result);
+          alert("server is not responding");
+          setIsLoading(false);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -106,7 +132,26 @@ const DutyCalculationsForm = ({ targetRef }) => {
   };
   return (
     <div className="section6">
-      <div className="front-full-quote front-full-story featured1">
+      {isLoading && (
+        <Oval
+          visible={true}
+          height="120"
+          width="120"
+          color="#4fa94d"
+          ariaLabel="oval-loading"
+          wrapperStyle={{
+            position: "fixed",
+            top: "50%",
+            left: "47%",
+            zIndex: "1000",
+          }}
+          wrapperClass=""
+        />
+      )}
+      <div
+        className="front-full-quote front-full-story featured1"
+        style={isLoading ? { filter: "blur(5px)" } : {}}
+      >
         <div className="front-shade-needed"></div>
         <Image
           width="3346"
@@ -260,6 +305,8 @@ const DutyCalculationsForm = ({ targetRef }) => {
                           setFormData={setFormData}
                           value={formData.phone}
                           isInvalid={isInvalid}
+                          selectedCode={selectedCode}
+                          setSelectedCode={setSelectedCode}
                         />
                         <Form.Control.Feedback type="invalid">
                           Please provide a valid Phone.
@@ -329,12 +376,16 @@ const DutyCalculationsForm = ({ targetRef }) => {
                       </Form.Group>
                     </Row>
                     <div className="text-center my-5">
-                        <Button className="btn btn-light mx-2" type="submit">
-                          Request a Quote
-                        </Button>
-                        <Button className="btn btn-light mx-2" type="button" onClick={handleDownload}>
-                          Download Tariff
-                        </Button>
+                      <Button className="btn btn-light mx-2" type="submit">
+                        Request a Quote
+                      </Button>
+                      <Button
+                        className="btn btn-light mx-2"
+                        type="button"
+                        onClick={handleDownload}
+                      >
+                        Download Tariff
+                      </Button>
                     </div>
                   </Form>
                 </div>

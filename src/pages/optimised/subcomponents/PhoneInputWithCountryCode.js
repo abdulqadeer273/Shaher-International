@@ -50,13 +50,10 @@ const phoneNumberOptions = [
 ];
 
 
-const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData }) => {
-  const [selectedCurrency, setSelectedCurrency] = useState(
-    phoneNumberOptions[0]
-  );
+const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,setSelectedCode }) => {
 
   const handleCurrencyChange = (currency) => {
-    setSelectedCurrency(currency);
+    setSelectedCode(currency);
   };
 
   const handleAmountChange = (event) => {
@@ -77,7 +74,7 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData }) => {
             borderRight: 0,
           }}
         >
-          {selectedCurrency.label}
+          {selectedCode.label}
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -92,7 +89,7 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData }) => {
           as={InputGroup.Append}
           variant="light"
           style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-          title={selectedCurrency.value}
+          title={selectedCode.value}
           id="input-group-dropdown-1"
         >
           {phoneNumberOptions.map((currency) => (

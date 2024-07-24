@@ -47,7 +47,7 @@ const DutyCalculationsForm = ({ targetRef }) => {
     } else {
       try {
         setIsLoading(true);
-        formData.phone = selectedCode.label + formData.phone;
+        formData.phone = selectedCode?.label + formData.phone;
         const response = await fetch("/.netlify/functions/contact", {
           method: "POST",
           headers: {

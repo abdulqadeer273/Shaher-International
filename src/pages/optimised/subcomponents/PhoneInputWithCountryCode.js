@@ -57,7 +57,7 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,
   };
 
   const handleAmountChange = (event) => {
-    const desiredValue = event.target.value.replace(/[^0-9.]/g, ""); // Allow only numbers and decimal point
+    const desiredValue = event.target?.value.replace(/[^0-9.]/g, ""); // Allow only numbers and decimal point
     setFormData((prevData) => ({
       ...prevData,
       phone: desiredValue,
@@ -74,7 +74,7 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,
             borderRight: 0,
           }}
         >
-          {selectedCode.label}
+          {selectedCode?.label}
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -89,15 +89,15 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,
           as={InputGroup.Append}
           variant="light"
           style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-          title={selectedCode.value}
+          title={selectedCode?.value}
           id="input-group-dropdown-1"
         >
           {phoneNumberOptions.map((currency) => (
             <Dropdown.Item
-              key={currency.value}
+              key={currency?.value}
               onClick={() => handleCurrencyChange(currency)}
             >
-              {currency.value}
+              {currency?.value}
             </Dropdown.Item>
           ))}
         </DropdownButton>

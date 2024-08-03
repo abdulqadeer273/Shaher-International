@@ -83,7 +83,6 @@ const CurrencyAmountInput = ({isInvalid, value, setFormData}) => {
           onChange={handleAmountChange}
           placeholder="Enter number"
           style={{ borderRadius: 0, border: 0 }}
-          required
           isInvalid={isInvalid} // Add this line to control when to show feedback
         />
         <DropdownButton

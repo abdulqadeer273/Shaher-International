@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import image1 from "../../../assets/images/ishant-mishra-napAS8Izafs-unsplash.webp";
+import image1 from "../../assets/images/ishant-mishra-napAS8Izafs-unsplash.webp";
 import { Form, Row, Col, InputGroup, Button } from "react-bootstrap";
 import CurrencyAmountInput from "./CurrencyAmountInput";
 import PhoneInputWithCountryCode from "./PhoneInputWithCountryCode";
@@ -268,7 +268,7 @@ const DutyCalculationsForm = ({ targetRef }) => {
                         controlId="validationCustomUsername"
                       >
                         <Form.Label className="opposite-color">
-                          Email
+                          Email<span style={{color:"red"}}>*</span>
                         </Form.Label>
                         <InputGroup hasValidation>
                           <InputGroup.Text id="inputGroupPrepend">
@@ -294,7 +294,7 @@ const DutyCalculationsForm = ({ targetRef }) => {
                         controlId="validationCustom03"
                       >
                         <Form.Label className="opposite-color">
-                          Phone
+                          Phone<span style={{color:"red"}}>*</span>
                         </Form.Label>
                         <PhoneInputWithCountryCode
                           setFormData={setFormData}
@@ -314,13 +314,14 @@ const DutyCalculationsForm = ({ targetRef }) => {
                         md="6"
                         controlId="validationCustom04"
                       >
-                        <Form.Label className="opposite-color">Name</Form.Label>
+                        <Form.Label className="opposite-color">Name<span style={{color:"red"}}>*</span></Form.Label>
                         <Form.Control
                           type="text"
                           placeholder="Name"
                           name="name"
                           minLength={3}
                           value={formData.name}
+                          required
                           onChange={handleChange}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -354,12 +355,13 @@ const DutyCalculationsForm = ({ targetRef }) => {
                         controlId="validationCustom02"
                       >
                         <Form.Label className="opposite-color">
-                          Description
+                          Description<span style={{color:"red"}}>*</span>
                         </Form.Label>
                         <Form.Control
                           minLength={3}
                           as="textarea"
                           rows={3}
+                          required
                           placeholder="Description"
                           name="description"
                           value={formData.description}

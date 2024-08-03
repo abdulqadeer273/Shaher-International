@@ -69,7 +69,7 @@ const HeaderNavbar = () => {
             style={{ justifyContent: "center" }}
           >
             <Link
-              href="/home"
+              href="/"
               className="nav-link mx-2"
               //   style={{ color: "#452228" }}
               style={{ color: "currentcolor" }}
@@ -86,7 +86,7 @@ const HeaderNavbar = () => {
               Services
             </Link>
             <Link
-              href="/products"
+              href="/"
               className="nav-link mx-2"
               //   style={{ color: "#452228" }}
               style={{ color: "currentcolor" }}

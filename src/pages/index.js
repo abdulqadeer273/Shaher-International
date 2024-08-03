@@ -7,7 +7,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import FirstBanner from "../components/Banners/FirstBanner";
 import SecondBanner from "../components/Banners/SecondBanner";
 import Carousel from "../components/Carousel/Carousel";
-import DutyCalculationsForm from "./optimised/subcomponents/DutyCalculationsForm";
+import DutyCalculationsForm from "../components/QForm/DutyCalculationsForm"
 import Head from "next/head";
 const index = () => {
   const targetRef = useRef(null);

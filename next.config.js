@@ -17,7 +17,7 @@ module.exports = {
     return [
       {
         source: "/",
-        destination: "/optimised",
+        destination: "/",
         permanent: true,
       },
     ];

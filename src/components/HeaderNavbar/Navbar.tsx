@@ -65,7 +65,8 @@ const HeaderNavbar = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle /> */}
           <Navbar.Collapse
-            style={{ justifyContent: "center", fontSize: "x-large" }}
+          className="nav-font"
+            style={{ justifyContent: "center" }}
           >
             <Link
               href="/home"

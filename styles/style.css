@@ -1,7 +1,13 @@
 * {
     scroll-behavior:smooth(1000);
 }
-
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: brown; */
+}
 /* 
 .first-section-lp {
     background: url('/src/assets/videos/video1.mp4') top center;
@@ -84,7 +90,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
   transition: background-color 0.3s ease;
   z-index: 2;
 }
@@ -233,7 +238,7 @@
     /* z-index: 1 */
 }
 .font-full-inner-content.front-story {
-    max-width: 100%
+    max-width: 100vw;
 }
 a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt:visited {
     color: #ebebeb;
@@ -251,32 +256,228 @@ a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt
     color: var(--global-font-light)
 }
 @media screen and (min-width: 48em) {
+    .nav-font{
+        font-size: x-large;
+    }
+    .f-banner-image-1{
+        width: 100px;
+        height: 100px;
+    }
+    .f-banner-image-2{
+        width: 50px;
+        height: 45px;
+    }
+    .f-banner-image-3{
+        width: 40px;
+        height: 40px;
+    }
+    .f-banner-image-4{
+        width: 50px;
+        height: 40px;
+    }
+    .front-full-inner-quote{
+        padding:0 15rem;
+    }
     .front-full-story h3 {
         font-size:2em
+    }
+    .banner-logo-image-1{
+        width: 110;
+        height: 110;
+    }
+    .banner-logo-image-2{
+        width: 130;
+        height: 100;
+    }
+    .banner-logo-image-3{
+        width: 100;
+        height: 100;
     }
 }
 .front-full-story p {
     font-size: x-large;
 }
 @media (max-width: 1366px) {
+    .nav-font{
+        font-size: x-large;
+    }
+    .f-banner-image-1{
+        width: 100px;
+        height: 100px;
+    }
+    .f-banner-image-2{
+        width: 50px;
+        height: 45px;
+    }
+    .f-banner-image-3{
+        width: 40px;
+        height: 40px;
+    }
+    .f-banner-image-4{
+        width: 50px;
+        height: 40px;
+    }
+    .card{
+        height: 400px;
+        width: 25rem;
+        min-width: 400px;
+    }
+    .front-full-inner-quote{
+        padding:0 15rem;
+    }
     .front-full-story p {
         font-size: larger;
     }
+    .banner-logo-image-1{
+        width: 110px;
+        height: 110px;
+    }
+    .banner-logo-image-2{
+        width: 130px;
+        height: 100px;
+    }
+    .banner-logo-image-3{
+        width: 100px;
+        height: 100px;
+    }
 }
 @media (max-width: 1200px) {
+    .nav-font{
+        font-size: x-large;
+    }
+    .f-banner-image-1{
+        width: 100px;
+        height: 100px;
+    }
+    .f-banner-image-2{
+        width: 50px;
+        height: 45px;
+    }
+    .f-banner-image-3{
+        width: 40px;
+        height: 40px;
+    }
+    .f-banner-image-4{
+        width: 50px;
+        height: 40px;
+    }
+    .card{
+        height: 400px;
+        width: 25rem;
+        min-width: 400px;
+    }
+    .front-full-inner-quote{
+        padding:0 2rem;
+    }
     .front-full-story p {
         font-size: 13px;
     }
+    .banner-logo-image-1{
+        width: 110px;
+        height: 110px;
+    }
+    .banner-logo-image-2{
+        width: 130px;
+        height: 100px;
+    }
+    .banner-logo-image-3{
+        width: 100px;
+        height: 100px;
+    }
 }
 @media (max-width: 768px) {
+    .nav-font{
+        font-size: x-large;
+    }
+    .f-banner-image-1{
+        width: 100px;
+        height: 100px;
+    }
+    .f-banner-image-2{
+        width: 50px;
+        height: 45px;
+    }
+    .f-banner-image-3{
+        width: 40px;
+        height: 40px;
+    }
+    .f-banner-image-4{
+        width: 50px;
+        height: 40px;
+    }
+    .card{
+        height: 400px;
+        width: 25rem;
+        min-width: 400px;
+    }
+    .front-full-inner-quote{
+        padding:0 5rem;
+    }
     .front-full-story p {
         font-size: 12px;
+    }
+    .banner-logo-image-1{
+        width: 110px;
+        height: 110px;
+    }
+    .banner-logo-image-2{
+        width: 130px;
+        height: 100px;
+    }
+    .banner-logo-image-3{
+        width: 100px;
+        height: 100px;
     }
 }
 
 @media (max-width: 480px) {
+    .nav-font{
+        font-size: large;
+    }
+    .f-banner-image-1{
+        width: 70px;
+        height: 90px;
+    }
+    .f-banner-image-2{
+        width: 55px;
+        height: 45px;
+    }
+    .f-banner-image-3{
+        width: 40px;
+        height: 45px;
+    }
+    .f-banner-image-4{
+        width: 50px;
+        height: 45px;
+    }
+    .front-full-slider {
+        height: 250vh;
+    }
+    .card{
+        height: 200px;
+        width: 200px;
+        min-width: 100px;
+    }
+    .front-full-inner-quote{
+        padding:0 2rem;
+    }
+    .front-full {
+        height: 250vh;
+    }
     .front-full-story p {
-        font-size: 10px;
+        font-size: 20px;
+    }
+    .banner-logo-image-1{
+        width: 80px;
+        height: 80px;
+    }
+    .banner-logo-image-2{
+        width: 100px;
+        height: 80px;
+    }
+    .banner-logo-image-3{
+        width: 80px;
+        height: 80px;
     }
 }
 a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-link:visited {
@@ -286,6 +487,18 @@ a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-
 @media screen and (min-width: 48em) {
     a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-link:visited {
         font-size:1.5em
+    }
+    .banner-logo-image-1{
+        width: 110px;
+        height: 110px;
+    }
+    .banner-logo-image-2{
+        width: 130px;
+        height: 100px;
+    }
+    .banner-logo-image-3{
+        width: 100px;
+        height: 100px;
     }
 }
 .front-full-inner {
@@ -337,7 +550,7 @@ a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-
 
 
 .video-container {
-    width: 100vw;
+    width: 100%;
     height: 100vh; /* or specify a fixed height if needed */
     overflow: hidden;
     position: relative; /* Add this to enable positioning of the video */

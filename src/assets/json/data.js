@@ -8,6 +8,7 @@ export const Data = [
     text2:
       "Our CEO has to his credit more than 30 years' experience in the clearance of goods of diversified nature, including heavy plant & machinery and plants' spare parts for power project and Raw materials and Chemicals,this acquiring specialization in these areas. It means outsourcing all of your supply chain and lo gistics requirements to a capable and trusted company, such as Shaher International whos works as an extension of your business.",
     text3: "",
+    id:"aboutus"
   },
   {
     imageSrc: "/lucas-van-oort-fBZOVyF-96w-unsplash_1.webp",
@@ -18,6 +19,7 @@ export const Data = [
     text2:
       "Shaher International offers a global 3PL service for companies of all sizes , in all industriesm although we have specialist expertise in Engineering, mechanical handling eqiopment, textile, auto movile and the power geeration industries. We provide end-to-end supply chain management, including warehousing, distribution, packaging and freight forwarding, with the same dedication and efficiency that has led us to become one of the leading companies",
     text3: "",
+    id:"scope"
   },
   {
     imageSrc: "/venti-views-FPKnAO-CF6M-unsplash.webp",
@@ -28,6 +30,7 @@ export const Data = [
     text2:
       "In peak seasons when space is too critical we provide you with effective solution. We are specialized in consoldations from Hong Kong and China sector and handling thousands of tons of cargo.",
     text3: "",
+    id:"service1"
   },
   {
     imageSrc: "/lucas-van-oort-fBZOVyF-96w-unsplash_1.webp",
@@ -38,6 +41,7 @@ export const Data = [
     text2:
       "We can manage various kinds of cargo, uor dry cargo (FCL, LCL), temperature-controlled cargo, project cargo, Open Top, Flat rack, RoRo and Break Bulk. We take of your cargo not only on sea-way but also on door to door delivery service, de-consolidation and other related services.",
     text3: "",
+    id:"service2"
   },
   {
     imageSrc: "/ishant-mishra-napAS8Izafs-unsplash.webp",
@@ -48,6 +52,7 @@ export const Data = [
     text2:
       "Full loads and LCL. Bonded trucking to and from Inland ports. Door-to-door collections and deliveries. Projects and out of gaue cargo. A range of vehicles including tilt trailers, high-cubes. A multi axle trailers and low bed loaders. In-depth local knowledge from experienced specialists, in line with market demands, we offer dedicated and individual delivery services up to and from the major ports and we have close partnerships with a reliable fleet of sub-contractors, which gives us real flexibility to respond to your changing requirements. ",
     text3: "",
+    id:"service3"
   },
   {
     imageSrc: "/lucas-van-oort-fBZOVyF-96w-unsplash_1.webp",
@@ -57,6 +62,7 @@ export const Data = [
       "We work with several warehouses, and load terminals which best fits for our customers need. We also provide public and contracted warehouses to our customers.",
     text2: "",
     text3: "",
+    id:"service4"
   },
   {
     imageSrc: "/ishant-mishra-napAS8Izafs-unsplash.webp",
@@ -66,5 +72,6 @@ export const Data = [
       "We can arrange shipments from port to port or from door to door. We give substantial foolow ups of our all sea shipments from origins till delivery at destination ports. Including Ex-works, FOB and CFR.",
     text2: "",
     text3: "",
+    id:"service5"
   },
 ];

@@ -7,7 +7,7 @@ import LoadingScreen from "../../components/LoadingScreen";
 import FirstBanner from "../../components/Banners/FirstBanner";
 import SecondBanner from "../../components/Banners/SecondBanner";
 import Carousel from "../../components/Carousel/Carousel";
-import DutyCalculationsForm from "./subcomponents/DutyCalculationsForm";
+import DutyCalculationsForm from "../optimised/subcomponents/DutyCalculationsForm";
 import Head from "next/head";
 const index = () => {
   const targetRef = useRef(null);
@@ -20,41 +20,10 @@ const index = () => {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  // useEffect(() => {
-  //   const testFunction = async () => {
-  //     try {
-  //       const response = await fetch('/.netlify/functions/contact', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json'
-  //         },
-  //         body: JSON.stringify({
-  //           name: 'Abdul Qadeer',
-  //           email: 'rq5047772@gmail.com',
-  //           message: 'This is a test message'
-  //         })
-  //       });
-
-  //       const result = await response.json();
-  //       if (result.success) {
-  //         console.log('Message sent successfully:', result);
-  //       } else {
-  //         console.log('Failed to send message:', result);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //     }
-  //   };
-
-  //   testFunction();
-  // }, []);
   return (
-    // <LoadingScreen/>
-    <div>
+    <>
       <Head>
-        <title>My Next.js Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Add other meta tags here */}
       </Head>
       <Header />
       <div className="video-container">
@@ -85,6 +54,7 @@ const index = () => {
             text1={elem?.text1}
             text2={elem?.text2}
             text3={""}
+            id={elem?.id}
           />
         </div>
       ))}
@@ -93,8 +63,7 @@ const index = () => {
       <Carousel />
       <SecondBanner />
       <Footer handleClick={handleClick}/>
-    </div>
-    // <div style={{color:"white",width:"100%",heigth:"100vh"}}>hello</div>
+    </>
   );
 };
 

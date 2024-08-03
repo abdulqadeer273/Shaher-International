@@ -17,10 +17,10 @@ const SecondBanner = () => {
       }}
     >
       <div className="d-flex justify-content-evenly">
-        <Image src={slogo1} alt="not found" width={110} height={110} />
-        <Image src={slogo2} alt="not found" width={110} height={110} />
-        <Image src={slogo3} alt="not found" width={130} height={100} />
-        <Image src={slogo4} alt="not found" width={100} height={100} />
+        <Image className="banner-logo-image-1" src={slogo1} alt="not found" />
+        <Image className="banner-logo-image-1" src={slogo2} alt="not found" />
+        <Image className="banner-logo-image-2" src={slogo3} alt="not found" />
+        <Image className="banner-logo-image-3" src={slogo4} alt="not found" />
       </div>
     </div>
   );

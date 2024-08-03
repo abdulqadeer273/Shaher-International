@@ -13,14 +13,13 @@ const Card: React.FC<CardProps> = ({ image }) => {
       style={{
         position: "relative",
         overflow: "hidden",
-        height: "400px",
-        width: "25rem", // Adjusted width
-        minWidth: "400px",
         background: "slate-400",
         // cursor: "pointer",
       }}
       onHoverStart={() => setShowOverLay(true)}
       onHoverEnd={() => setShowOverLay(false)}
+      onTouchStart={()=>setShowOverLay(true)}
+      onTouchEnd={() => setShowOverLay(false)}
     >
       <AnimatePresence>
         {showOverLay && (

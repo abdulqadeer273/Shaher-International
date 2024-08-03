@@ -9,7 +9,6 @@ import Header from '../layout/header/Header';
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
     return (
         <>
-            {/* <Header /> */}
             <Component {...pageProps} />
         </>
     )

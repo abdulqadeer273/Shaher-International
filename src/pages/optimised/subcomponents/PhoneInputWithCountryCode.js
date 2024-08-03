@@ -49,9 +49,23 @@ const phoneNumberOptions = [
   { value: "ZA", label: "+27" }, // South Africa
 ];
 
-
-const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,setSelectedCode }) => {
-
+const PhoneInputWithCountryCode = ({
+  isInvalid,
+  value,
+  setFormData,
+  selectedCode,
+  setSelectedCode,
+}) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredOptions, setFilteredOptions] = useState(phoneNumberOptions);
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+    const filtered = options.filter((option) =>
+      option.toLowerCase().includes(term)
+    );
+    setFilteredOptions(filtered);
+  };
   const handleCurrencyChange = (currency) => {
     setSelectedCode(currency);
   };
@@ -63,7 +77,9 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,
       phone: desiredValue,
     }));
   };
-
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
   return (
     <>
       <div style={{ position: "relative", display: "flex" }}>
@@ -89,10 +105,21 @@ const PhoneInputWithCountryCode = ({ isInvalid, value, setFormData,selectedCode,
           as={InputGroup.Append}
           variant="light"
           style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-          title={selectedCode?.value}
+          title={selectedCode ? selectedCode.value : "Select..."}
           id="input-group-dropdown-1"
         >
-          {phoneNumberOptions.map((currency) => (
+          <Dropdown.Item>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search..."
+              value={searchTerm}
+              onKeyDown={stopPropagation}
+              onClick={stopPropagation}
+              onChange={handleSearch}
+            />
+          </Dropdown.Item>
+          {filteredOptions.map((currency) => (
             <Dropdown.Item
               key={currency?.value}
               onClick={() => handleCurrencyChange(currency)}

@@ -154,8 +154,8 @@ const DutyCalculationsForm = ({ targetRef }) => {
       >
         <div className="front-shade-needed"></div>
         <Image
-          width="3346"
-          height="1878"
+          width="2000"
+          height="1500"
           alt="not found"
           src={image1}
           style={{ mixBlendMode: "multiply" }}
@@ -255,11 +255,6 @@ const DutyCalculationsForm = ({ targetRef }) => {
                         <Form.Label className="opposite-color">
                           Value
                         </Form.Label>
-                        {/* <Form.Control
-                          required
-                          type="text"
-                          placeholder="Value"
-                        /> */}
 
                         <CurrencyAmountInput
                           setFormData={setFormData}
@@ -376,11 +371,11 @@ const DutyCalculationsForm = ({ targetRef }) => {
                       </Form.Group>
                     </Row>
                     <div className="text-center my-5">
-                      <Button className="btn btn-light mx-2" type="submit">
+                      <Button className="btn btn-light mx-2 mb-2" type="submit">
                         Request a Quote
                       </Button>
                       <Button
-                        className="btn btn-light mx-2"
+                        className="btn btn-light mx-2 mb-2"
                         type="button"
                         onClick={handleDownload}
                       >

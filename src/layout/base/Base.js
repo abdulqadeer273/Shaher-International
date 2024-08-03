@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Base = ({ index, imageSrc, videoSrc, heading, text1, text2, text3 }) => {
+const Base = ({ index, imageSrc, videoSrc, heading, text1, text2, text3,id }) => {
   return (
     <div className="section2" key={index}>
       <div
@@ -18,7 +18,7 @@ const Base = ({ index, imageSrc, videoSrc, heading, text1, text2, text3 }) => {
           style={{ mixBlendMode: "multiply" }}
           quality={10}
         />
-        <div className="front-full-inner">
+        <div className="front-full-inner" id={id}>
           <div className="font-full-inner-content front-story">
             <h3>{heading}</h3>
             <div className="front-excerpt">

@@ -15,6 +15,16 @@ body {
     background-size: cover;
     overflow: hidden;
 } */
+.company-name{
+    color: lightgoldenrodyellow;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    font-size: xxx-large;
+    font-weight: bold;
+    font-family: serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 .front-full-inner-quote{
     position: relative;
     z-index: 2;
@@ -105,8 +115,9 @@ body {
 
 .nav-link {
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: lightgoldenrodyellow!important;
     transition: color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-link:hover {
@@ -478,6 +489,11 @@ a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt
     .banner-logo-image-3{
         width: 80px;
         height: 80px;
+    }
+    .company-name{
+        font-size: 3rem;
+        text-align: center;
+        left:0;
     }
 }
 a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-link:visited {

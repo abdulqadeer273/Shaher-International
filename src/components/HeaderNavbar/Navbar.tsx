@@ -38,7 +38,7 @@ const HeaderNavbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setNavbarBackground("#e6e9ea");
+        setNavbarBackground("rgba(0, 0, 0, 0.5)");
         setNavbarColor("black");
       } else {
         setNavbarBackground("transparent");

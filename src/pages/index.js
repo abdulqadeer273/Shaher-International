@@ -30,21 +30,20 @@ const index = () => {
       <Header />
       <div className="video-container">
         <video
-          // controls
           autoPlay
           muted
           playsInline
-          poster="/videoplaceholder.png"
           loop
           preload="auto"
-          onCanPlayThrough={handleVideoLoad}
-          onEnded={(e) => {
-            e.target.play(); // Ensure video replays on end
-          }}
         >
-          <source src="/video1.mp4" type="video/mp4" />
+          <source src="/video4.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div
+        className="company-name"
+        >
+          Shaher International
+        </div>
       </div>
       {Data?.map((elem, index) => (
         <div key={index}>

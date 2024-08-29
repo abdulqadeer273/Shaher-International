@@ -8,19 +8,12 @@ body {
   box-sizing: border-box;
   /* background-color: brown; */
 }
-/* 
-.first-section-lp {
-    background: url('/src/assets/videos/video1.mp4') top center;
-    height: 100vh;
-    background-size: cover;
-    overflow: hidden;
-} */
 .company-name{
     color: lightgoldenrodyellow;
     position: absolute;
     top: 45%;
     left: 10%;
-    font-size: xxx-large;
+    font-size: 6rem;
     font-weight: bold;
     font-family: serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -147,13 +140,6 @@ body {
     margin: 10px auto;
 }
 
-.qsection1 {
-    background: url('../public/qcover24.jpeg') top center;
-    background-size: cover;
-    overflow: hidden;
-    background-size: 100% 80vh;
-    background-repeat: no-repeat;
-}
 .opposite-color {
     color: black; /* Set your desired text color */
     /* font-weight: bold; */
@@ -309,6 +295,9 @@ a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt
     font-size: x-large;
 }
 @media (max-width: 1366px) {
+    .company-name{
+        font-size: 4rem;
+    }
     .nav-font{
         font-size: x-large;
     }
@@ -353,6 +342,9 @@ a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt
     }
 }
 @media (max-width: 1200px) {
+    .company-name{
+        font-size: 4rem;
+    }
     .nav-font{
         font-size: x-large;
     }
@@ -493,7 +485,6 @@ a .front-excerpt,a .front-excerpt:active,a .front-excerpt:focus,a .front-excerpt
     .company-name{
         font-size: 3rem;
         text-align: center;
-        left:0;
     }
 }
 a.front-full-link,a.front-full-link:active,a.front-full-link:focus,a.front-full-link:visited {

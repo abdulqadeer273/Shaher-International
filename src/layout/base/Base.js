@@ -16,7 +16,7 @@ const Base = ({ index, imageSrc, videoSrc, heading, text1, text2, text3,id }) =>
           src={imageSrc}
           priority
           style={{ mixBlendMode: "multiply" }}
-          quality={10}
+          quality={100}
         />
         <div className="front-full-inner" id={id}>
           <div className="font-full-inner-content front-story">

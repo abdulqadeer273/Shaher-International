@@ -23,6 +23,7 @@ const DutyCalculationsForm = ({ targetRef }) => {
     companyName: "",
     description: "",
   });
+  const [selectedCurrency, setSelectedCurrency] = useState({ value: "USD", label: "$" });
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/TARIFF.pdf"; // Path to your PDF file in the public folder
@@ -47,13 +48,15 @@ const DutyCalculationsForm = ({ targetRef }) => {
     } else {
       try {
         setIsLoading(true);
-        formData.phone = selectedCode?.label + formData.phone;
+        let body={...formData}
+        body.phone = selectedCode?.label + formData?.phone;
+        body.value = selectedCurrency?.label + formData?.value;
         const response = await fetch("/.netlify/functions/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(body),
         });
 
         const result = await response.json();
@@ -260,6 +263,8 @@ const DutyCalculationsForm = ({ targetRef }) => {
                           setFormData={setFormData}
                           isInvalid={isInvalid}
                           value={formData.value}
+                          selectedCurrency={selectedCurrency}
+                          setSelectedCurrency={setSelectedCurrency}
                         />
                       </Form.Group>
                       <Form.Group

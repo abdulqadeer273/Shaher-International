@@ -108,17 +108,6 @@ const PhoneInputWithCountryCode = ({
           title={selectedCode ? selectedCode.value : "Select..."}
           id="input-group-dropdown-1"
         >
-          <Dropdown.Item>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search..."
-              value={searchTerm}
-              onKeyDown={stopPropagation}
-              onClick={stopPropagation}
-              onChange={handleSearch}
-            />
-          </Dropdown.Item>
           {filteredOptions.map((currency) => (
             <Dropdown.Item
               key={currency?.value}

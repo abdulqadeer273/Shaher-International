@@ -50,8 +50,7 @@ const currencyOptions = [
   // Add more currencies as needed
 ];
 
-const CurrencyAmountInput = ({isInvalid, value, setFormData}) => {
-  const [selectedCurrency, setSelectedCurrency] = useState(currencyOptions[0]);
+const CurrencyAmountInput = ({isInvalid, value, setFormData,selectedCurrency,setSelectedCurrency}) => {
 
   const handleCurrencyChange = (currency) => {
     setSelectedCurrency(currency);
@@ -94,10 +93,10 @@ const CurrencyAmountInput = ({isInvalid, value, setFormData}) => {
         >
           {currencyOptions.map((currency) => (
             <Dropdown.Item
-              key={currency.value}
+              key={currency?.value}
               onClick={() => handleCurrencyChange(currency)}
             >
-              {currency.value}
+              {currency?.value}
             </Dropdown.Item>
           ))}
         </DropdownButton>

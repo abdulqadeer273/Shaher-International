@@ -1,5 +1,9 @@
 import React from "react";
-
+import Image from "next/image";
+import ikea from "../../assets/images/ikea_logo_icon.webp";
+import yahoo from "../../assets/images/yahoo.webp";
+import google from "../../assets/images/google.webp";
+import godaddy from "../../assets/images/godaddy.png";
 const FirstBanner = () => {
   return (
     <div
@@ -15,26 +19,36 @@ const FirstBanner = () => {
         Worked with leading industries and founders
       </p>
       <div className="d-flex justify-content-evenly">
-        <img
+        <Image 
           className="f-banner-image-1"
-          src={
-            "https://cdn.icon-icons.com/icons2/2845/PNG/512/ikea_logo_icon_181297.png"
-          }
+          src={ikea}
+          alt="Ikea Logo"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
           className="mt-4 f-banner-image-2"
-          src={"https://simpleicon.com/wp-content/uploads/yahoo1.png"}
-         />
-        <img
-          className="mt-4 f-banner-image-3"
-          src={"https://www.svgrepo.com/show/50809/google.svg"}
+          src={yahoo}
+          alt="Yahoo Logo"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
+          className="mt-4 f-banner-image-3"
+          src={google}
+          alt="Google Logo"
+          width={100}
+          height={100}
+        />
+        <Image
           className="mt-4 f-banner-image-4"
           src={
-            "https://static-00.iconduck.com/assets.00/godaddy-icon-512x456-pjakb0ub.png"
+            godaddy
           }
-         />
+          alt="GoDaddy Logo"
+          width={100}
+          height={100}
+        />
       </div>
     </div>
   );

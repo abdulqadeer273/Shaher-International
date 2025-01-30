@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Link from "next/link";
-import logo from "../../assets/images/logo.png"; 
-import Image from "next/image";
 const HeaderNavbar = () => {
   const [navbarBackground, setNavbarBackground] = useState("transparent");
   const [navbarColor, setNavbarColor] = useState("black");

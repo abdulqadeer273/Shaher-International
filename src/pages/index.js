@@ -26,6 +26,7 @@ const index = () => {
     slidesToScroll: 1,
     autoplay: true, // Add this line
     autoplaySpeed: 2000, // Add this line (2 seconds)
+    arrows:false,
     responsive: [
       {
         breakpoint: 1200,
